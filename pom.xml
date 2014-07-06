@@ -1,0 +1,179 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <name>deors.demos.cloud.gae</name>
+
+    <groupId>deors.demos</groupId>
+    <artifactId>deors.demos.cloud.gae</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>war</packaging>
+
+    <properties>
+        <project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
+
+        <java.version>1.7</java.version>
+
+        <gae.version>1.9.6</gae.version>
+        <gwt.version>2.6.1</gwt.version>
+
+        <gae-datanucleus.version>1.0.10</gae-datanucleus.version>
+        <datanucleus.version>1.1.5</datanucleus.version>
+
+        <junit.version>4.11</junit.version>
+
+        <jacoco.version>0.7.0.201403182114</jacoco.version>
+        <jacoco.path>${settings.localRepository}/org/jacoco/org.jacoco.agent/${jacoco.version}/org.jacoco.agent-${jacoco.version}-runtime.jar</jacoco.path>
+        <jacoco.utReport>${project.build.directory}/jacoco.exec</jacoco.utReport>
+        <jacoco.itReport>${project.build.directory}/jacoco.itest</jacoco.itReport>
+        <jacoco.utAgentConfig>-javaagent:${jacoco.path}=destfile=${jacoco.utReport}</jacoco.utAgentConfig>
+        <jacoco.itAgentConfig>-javaagent:${jacoco.path}=destfile=${jacoco.itReport}</jacoco.itAgentConfig>
+
+        <jacoco-listeners.version>2.3</jacoco-listeners.version>
+
+        <sonar.jacoco.itReportPath>${jacoco.itReport}</sonar.jacoco.itReportPath>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.google.appengine</groupId>
+                <artifactId>appengine-maven-plugin</artifactId>
+                <version>1.9.6</version>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>gwt-maven-plugin</artifactId>
+                <version>2.6.1</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>compile</goal>
+                            <goal>generateAsync</goal>
+                            <goal>test</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.17</version>
+                <configuration>
+                    <argLine>${jacoco.utAgentConfig}</argLine>
+                    <excludes>
+                        <exclude>**/it/*TestCase.java</exclude>
+                    </excludes>
+                    <properties>
+                        <property>
+                            <name>listener</name>
+                            <value>org.sonar.java.jacoco.JUnitListener</value>
+                        </property>
+                    </properties>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <version>2.17</version>
+                <configuration>
+                    <argLine>${jacoco.itAgentConfig}</argLine>
+                    <includes>
+                        <include>**/it/*TestCase.java</include>
+                    </includes>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>integration-test</id>
+                        <phase>integration-test</phase>
+                        <goals>
+                            <goal>integration-test</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.google.gwt</groupId>
+            <artifactId>gwt-user</artifactId>
+            <version>${gwt.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.appengine</groupId>
+            <artifactId>appengine-api-1.0-sdk</artifactId>
+            <version>${gae.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.appengine.orm</groupId>
+            <artifactId>datanucleus-appengine</artifactId>
+            <version>${gae-datanucleus.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.datanucleus</groupId>
+            <artifactId>datanucleus-jpa</artifactId>
+            <version>${datanucleus.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.datanucleus</groupId>
+            <artifactId>datanucleus-core</artifactId>
+            <version>${datanucleus.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.gwt</groupId>
+            <artifactId>gwt-servlet</artifactId>
+            <version>${gwt.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.appengine</groupId>
+            <artifactId>appengine-testing</artifactId>
+            <version>${gae.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.google.appengine</groupId>
+            <artifactId>appengine-api-stubs</artifactId>
+            <version>${gae.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.jacoco</groupId>
+            <artifactId>org.jacoco.agent</artifactId>
+            <version>${jacoco.version}</version>
+            <classifier>runtime</classifier>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.sonar-plugins.java</groupId>
+            <artifactId>sonar-jacoco-listeners</artifactId>
+            <version>${jacoco-listeners.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+</project>

@@ -1,2 +1,5 @@
+.classpath
 .gwt
-gwt-unitCache
+.project
+.settings
+target

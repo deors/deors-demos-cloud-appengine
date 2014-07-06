@@ -1,0 +1,62 @@
+.headerLabel {
+    font-family: Verdana;
+    font-size: 24px;
+    margin: 10px;
+}
+
+.messageLabel {
+    font-family: Verdana;
+    font-size: 16px;
+    margin: 10px;
+}
+
+.fromLabel {
+    font-family: Verdana;
+    font-size: 16px;
+    margin: 10px;
+}
+
+.toLabel {
+    font-family: Verdana;
+    font-size: 16px;
+    margin: 10px;
+}
+
+.toField {
+    font-family: Verdana;
+    font-size: 16px;
+    width: 175px;
+    margin: 10px;
+}
+
+.messagePanel {
+    width: 500px;
+    border: 1px solid silver;
+    margin: 0px 0px 0px 10px;
+    padding: 10px;
+}
+
+.messageField {
+    font-family: Verdana;
+    font-size: 16px;
+    width: 375px;
+    margin: 0px 10px 0px 0px;
+}
+
+.postButton {
+    font-family: Verdana;
+    font-size: 16px;
+}
+
+.thoughtsTable {
+    width: 500px;
+    border: 1px solid silver;
+    margin: 10px 0px 0px 10px;
+    padding: 10px;
+}
+
+.anchor {
+    font-family: Verdana;
+    font-size: 10px;
+    padding: 10px;
+}
