@@ -24,18 +24,16 @@
         <datanucleus.version>1.1.5</datanucleus.version>
         <jdo.version>2.3-eb</jdo.version>
 
-        <junit.version>4.11</junit.version>
+        <junit.version>4.12</junit.version>
 
-        <jacoco.version>0.7.0.201403182114</jacoco.version>
+        <jacoco.version>0.7.5.201505241946</jacoco.version>
         <jacoco.path>${settings.localRepository}/org/jacoco/org.jacoco.agent/${jacoco.version}/org.jacoco.agent-${jacoco.version}-runtime.jar</jacoco.path>
         <jacoco.utReport>${project.build.directory}/jacoco.exec</jacoco.utReport>
-        <jacoco.itReport>${project.build.directory}/jacoco.itest</jacoco.itReport>
+        <jacoco.itReport>${project.build.directory}/jacoco-it.exec</jacoco.itReport>
         <jacoco.utAgentConfig>-javaagent:${jacoco.path}=destfile=${jacoco.utReport}</jacoco.utAgentConfig>
         <jacoco.itAgentConfig>-javaagent:${jacoco.path}=destfile=${jacoco.itReport}</jacoco.itAgentConfig>
 
-        <jacoco-listeners.version>2.3</jacoco-listeners.version>
-
-        <sonar.jacoco.itReportPath>${jacoco.itReport}</sonar.jacoco.itReportPath>
+        <jacoco-listeners.version>3.5</jacoco-listeners.version>
     </properties>
 
     <build>
@@ -211,7 +209,7 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.codehaus.sonar-plugins.java</groupId>
+            <groupId>org.sonarsource.java</groupId>
             <artifactId>sonar-jacoco-listeners</artifactId>
             <version>${jacoco-listeners.version}</version>
             <scope>test</scope>
