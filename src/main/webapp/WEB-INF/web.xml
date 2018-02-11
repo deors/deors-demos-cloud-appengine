@@ -4,7 +4,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
 
-    <display-name>deors.demos.cloud.gae</display-name>
+    <display-name>deors-demos-cloud-gae</display-name>
 
     <servlet>
         <servlet-name>ThoughtService</servlet-name>
@@ -17,11 +17,11 @@
 
     <servlet-mapping>
         <servlet-name>ThoughtService</servlet-name>
-        <url-pattern>/deors.demos.cloud.gae.thinkingLoud/ThoughtService</url-pattern>
+        <url-pattern>/deors-demos-cloud-gae-thinkingLoud/ThoughtService</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>AuthInfoService</servlet-name>
-        <url-pattern>/deors.demos.cloud.gae.thinkingLoud/AuthInfoService</url-pattern>
+        <url-pattern>/deors-demos-cloud-gae-thinkingLoud/AuthInfoService</url-pattern>
     </servlet-mapping>
 
     <welcome-file-list>
