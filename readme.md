@@ -1,4 +1,4 @@
-# deors-demos-cloud-gae
+# deors-demos-cloud-appengine
 
 Demonstration of Java web application deployed on Google App Engine.
 

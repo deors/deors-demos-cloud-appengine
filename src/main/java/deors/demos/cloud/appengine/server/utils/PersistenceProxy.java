@@ -1,4 +1,4 @@
-package deors.demos.cloud.gae.server.utils;
+package deors.demos.cloud.appengine.server.utils;
 
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;

@@ -1,12 +1,12 @@
-package deors.demos.cloud.gae.server.services;
+package deors.demos.cloud.appengine.server.services;
 
 import com.google.appengine.api.users.User;
 import com.google.appengine.api.users.UserService;
 import com.google.appengine.api.users.UserServiceFactory;
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 
-import deors.demos.cloud.gae.client.services.AuthInfoService;
-import deors.demos.cloud.gae.shared.AuthInfo;
+import deors.demos.cloud.appengine.client.services.AuthInfoService;
+import deors.demos.cloud.appengine.shared.AuthInfo;
 
 public class AuthInfoServiceImpl extends RemoteServiceServlet implements AuthInfoService {
 

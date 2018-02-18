@@ -1,4 +1,4 @@
-package deors.demos.cloud.gae.shared;
+package deors.demos.cloud.appengine.shared;
 
 import java.io.Serializable;
 

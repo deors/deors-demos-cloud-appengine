@@ -1,4 +1,4 @@
-package deors.demos.cloud.gae.client.entrypoints;
+package deors.demos.cloud.appengine.client.entrypoints;
 
 import java.util.Date;
 import java.util.List;
@@ -19,12 +19,12 @@ import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.Button;
 
-import deors.demos.cloud.gae.client.services.AuthInfoService;
-import deors.demos.cloud.gae.client.services.AuthInfoServiceAsync;
-import deors.demos.cloud.gae.client.services.ThoughtService;
-import deors.demos.cloud.gae.client.services.ThoughtServiceAsync;
-import deors.demos.cloud.gae.shared.AuthInfo;
-import deors.demos.cloud.gae.shared.Thought;
+import deors.demos.cloud.appengine.client.services.AuthInfoService;
+import deors.demos.cloud.appengine.client.services.AuthInfoServiceAsync;
+import deors.demos.cloud.appengine.client.services.ThoughtService;
+import deors.demos.cloud.appengine.client.services.ThoughtServiceAsync;
+import deors.demos.cloud.appengine.shared.AuthInfo;
+import deors.demos.cloud.appengine.shared.Thought;
 
 public class ThinkingLoud
     implements EntryPoint {

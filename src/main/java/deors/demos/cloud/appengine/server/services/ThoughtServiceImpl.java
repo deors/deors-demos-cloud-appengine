@@ -1,4 +1,4 @@
-package deors.demos.cloud.gae.server.services;
+package deors.demos.cloud.appengine.server.services;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -9,9 +9,9 @@ import javax.persistence.Query;
 
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 
-import deors.demos.cloud.gae.client.services.ThoughtService;
-import deors.demos.cloud.gae.server.utils.PersistenceProxy;
-import deors.demos.cloud.gae.shared.Thought;
+import deors.demos.cloud.appengine.client.services.ThoughtService;
+import deors.demos.cloud.appengine.server.utils.PersistenceProxy;
+import deors.demos.cloud.appengine.shared.Thought;
 
 public class ThoughtServiceImpl extends RemoteServiceServlet implements ThoughtService {
 
