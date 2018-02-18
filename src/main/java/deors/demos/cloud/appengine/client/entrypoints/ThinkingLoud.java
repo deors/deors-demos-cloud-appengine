@@ -139,6 +139,7 @@ public class ThinkingLoud
             public void onSuccess(List<Thought> list) {
 
                 loadThoughtList(list);
+                messageField.setText("");
             }
 
             @Override
