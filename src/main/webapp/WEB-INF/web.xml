@@ -17,11 +17,11 @@
 
     <servlet-mapping>
         <servlet-name>ThoughtService</servlet-name>
-        <url-pattern>/deors-demos-cloud-appengine-thinkingLoud/ThoughtService</url-pattern>
+        <url-pattern>/deors.demos.cloud.appengine.thinkingLoud/ThoughtService</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>AuthInfoService</servlet-name>
-        <url-pattern>/deors-demos-cloud-appengine-thinkingLoud/AuthInfoService</url-pattern>
+        <url-pattern>/deors.demos.cloud.appengine.thinkingLoud/AuthInfoService</url-pattern>
     </servlet-mapping>
 
     <welcome-file-list>
