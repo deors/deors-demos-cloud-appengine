@@ -12,6 +12,6 @@ import deors.demos.cloud.appengine.shared.Thought;
 public interface ThoughtService extends RemoteService {
 
     List<Thought> getThoughts();
-    List<Thought> getThoughtsByDate(Date d);
-    List<Thought> postThought(Thought th, Date latest);
+    List<Thought> getThoughtsAfterDate(Date threshold);
+    List<Thought> postThought(Thought thought, Date latest);
 }

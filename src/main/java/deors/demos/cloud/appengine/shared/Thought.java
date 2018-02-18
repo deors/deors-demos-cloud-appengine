@@ -3,19 +3,9 @@ package deors.demos.cloud.appengine.shared;
 import java.io.Serializable;
 import java.util.Date;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-
-@Entity
 public class Thought implements Serializable {
 
     private static final long serialVersionUID = -5579390958742578458L;
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long key;
 
     private String poster;
 
@@ -35,14 +25,6 @@ public class Thought implements Serializable {
         setTarget(target);
         setMessage(message);
         setPostDate(postDate);
-    }
-
-    public Long getKey() {
-        return key;
-    }
-
-    public void setKey(Long key) {
-        this.key = key;
     }
 
     public String getPoster() {

@@ -60,7 +60,7 @@ public class ThinkingLoud
         @Override
         public void run() {
 
-            thoughtService.getThoughtsByDate(latest, new AsyncCallback<List<Thought>>() {
+            thoughtService.getThoughtsAfterDate(latest, new AsyncCallback<List<Thought>>() {
 
                 @Override
                 public void onSuccess(List<Thought> list) {
@@ -205,7 +205,7 @@ public class ThinkingLoud
 
     void loadThoughtList(List<Thought> list) {
 
-        if (list.size() != 0) {
+        if (!list.isEmpty()) {
             for (Thought th : list) {
                 thoughtsTable.insertRow(0);
                 thoughtsTable.setText(0, 0, th.toString());
